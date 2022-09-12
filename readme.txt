@@ -1,13 +1,11 @@
-
-
 === Mobile Contact Bar ===
 Contributors: anna.bansaghi
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YXJAZ7Q5EJFUA
-Tags: social media, icon, contact, mobile, woocommerce cart
+Tags: social media, icon, cta button, call to action, woocommerce cart
 Requires at least: 4.6
-Tested up to: 5.8
+Tested up to: 6.0
 Requires PHP: 5.3
-Stable tag: 2.0.8
+Stable tag: 2.1.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.en.html
 
@@ -34,9 +32,9 @@ The settings page is available under the *Settings &rarr; Mobile Contact Bar* me
 
 
 
-= Special Icons =
+= Special Actions =
 
-* Scroll to Top
+* Scroll to Top of the page
 * WooCommerce Cart with Item Counter
 
 
@@ -49,11 +47,13 @@ The settings page is available under the *Settings &rarr; Mobile Contact Bar* me
 * `skype`
 * `sms`
 * `tel`
+* `viber`
 
 
 
 = Tested with =
 
+* Twenty Twenty-Two
 * Twenty Twenty-One
 * Twenty Twenty
 * Twenty Nineteen
@@ -68,25 +68,18 @@ The settings page is available under the *Settings &rarr; Mobile Contact Bar* me
 
 
 
-= Credits =
-
-* [Font Awesome](https://fontawesome.com) SVG, font, and CSS framework
-* [Codestar Color Picker](https://github.com/bhaskarkc/codestar-wp-color-picker) with alpha channel
-
-
-
 == Installation ==
 
 = First time Mobile Contact Bar user =
 
-Thank you for choosing Mobile Contact Bar! In order to create your bar, simply activate the plugin and visit the plugin's settings page by clicking on *Settings &rarr; Mobile Contact Bar* in your left navigation menu.
-Once the plugin page loads, open the *Bar* box, choose the *Display on Devices* option, select the device type to enable the bar and then press the *Save Changes* button at the bottom of the page.
-Mobile Contact Bar will automatically create a default bar with an envelope icon, which uses the email address of your site's admin.
+Thank you for choosing Mobile Contact Bar! In order to create your bar, simply activate the plugin and visit the plugin's page by clicking on *MCB Contact Bar* in your left navigation menu.
+Once the plugin page loads, open the *Bar* box, choose the *Display on Devices* option, select the device type to enable the bar and then press the *Save Changes* button at the top of the page.
+Mobile Contact Bar will automatically create a default bar with a couple of buttons for you.
 
-= Adding icons to your bar =
+= Adding buttons to your bar =
 
-To add more icons to your bar, open the *Contact List* box, find a particular list item, select the checkbox, customize the icon and fill in the URI field.
-In order to add custom links, click on the *New Contact* button or on one of the icons at the top of the list.
+To add more buttons to your bar, open the *Button List* box, find a particular list item, select the checkbox, customize the icon and fill in the URI field.
+In order to add more buttons, click on the *New Button* or on one of the icons at the top of the list.
 
 
 = Positioning and styling your bar =
@@ -100,139 +93,141 @@ Open the *Icons*, *Badges*, or *Toggle* box and set options for icons, badges, o
 = JavaScript disabled =
 The plugin works fine without JavaScript on the front-end of your site.
 We use JavaScript on the front-end in two cases:
-1. if the toggle is activated, the plugin has an option for saving the toggle state in a cookie, and
-2. if the *Scroll to Top* icon is added, it calculates scrolling position in an inline script.
+1. if the toggle is activated, then the plugin has an option for saving the toggle state in a cookie, and
+2. *Scroll to Top*, *Back in History*, and *Forward in History* actions use inline JavaScript for their functionality.
 
 = Cookies =
-You have full control over your single cookie.
+You have full control over the single cookie which is called *mobile_contact_bar_toggle*.
 
+= Clearing the cache =
+If your site is chached via a caching plugin such as WP Fastest Cache or Cache Enabler, then it is important to clear those caches after the Contact Bar has been enabled.
+Also, if you disable the Contact Bar then the caches need to be cleared again.
 
 
 
 == Screenshots ==
 
-1. Contact List box
-2. Icons box, Toggle box
-3. Bar box
+1. Button List meta box
+2. Icons, Toggle meta boxes
+3. Bar meta box
 4. Settings &rarr; Mobile Contact Bar
 
 
 
 == Changelog ==
 
-= 2.0.8 =
+= 2.1.0 =
++ [Add] Add viber protocol [viber-chat](https://wordpress.org/support/topic/problem-whit-link/), [how-to-add-viber-button](https://wordpress.org/support/topic/how-to-add-viber-button/)
+* [Fix] Let the + sign be optional in tel and sms protocols [telephone-remove](https://wordpress.org/support/topic/telephone-remove/)
+* [Fix] Decode / encode query string [e-mail-body](https://wordpress.org/support/topic/e-mail-body/)
+* [Update] Font Awesome 5.15.4
 
-* [Fixed] Add rel="noopener" for links opening in new tab [links-to-cross-origin-destinations-are-unsafe](https://wordpress.org/support/topic/links-to-cross-origin-destinations-are-unsafe-7/)
+= 2.0.9 =
+* [Fix] Missing contact field "checked" notice
+
+= 2.0.8 =
+* [Fix] Add `rel="noopener"` for links opening in new tab [links-to-cross-origin-destinations-are-unsafe](https://wordpress.org/support/topic/links-to-cross-origin-destinations-are-unsafe-7/)
 
 = 2.0.7 =
-
-* [Fixed] Do not show meta boxes on foreign pages - [menu-bar-settings-appearing-for-ohter-users-than-admin](https://wordpress.org/support/topic/menu-bar-settings-appearing-for-ohter-users-than-admin/)
+* [Fix] Do not show meta boxes on foreign pages [menu-bar-settings-appearing-for-ohter-users-than-admin](https://wordpress.org/support/topic/menu-bar-settings-appearing-for-ohter-users-than-admin/)
 
 = 2.0.6 =
-
-* [Fixed] Domain Path
+* [Fix] Domain Path
 
 = 2.0.5 =
-
-* [Fixed] License version
-* [Fixed] Requires at least change to 4.6
+* [Fix] License version
+* [Fix] Requires at least has been changed to 4.6
 
 = 2.0.4 =
-
-* [Fixed] Add padding zero to toggle
+* [Fix] Add padding zero to toggle
 
 = 2.0.3 =
-
-* [Updated] Font Awesome 5.13.0
-* [Fixed] Add margin and padding to list items
+* [Fix] Add margin and padding to list items
+* [Update] Font Awesome 5.13.0
 
 = 2.0.2 =
-
-* [Fixed] Forgotten log message in source - [your-update-just-broke-my-site](https://wordpress.org/support/topic/your-update-just-broke-my-site-2/)
+* [Fix] Forgotten log message in source [your-update-just-broke-my-site](https://wordpress.org/support/topic/your-update-just-broke-my-site-2/)
 
 = 2.0.1 =
-* [Updated] Font Awesome 5.0.13
-* [Fixed] Extracted cookie into an option Toggle:Cookie
-* [Fixed] Restored Bar:Opacity option [a-few-more-minor-things-in-2-0](https://wordpress.org/support/topic/a-few-more-minor-things-in-2-0/)
+* [Fix] Extracted cookie into an option Toggle:Cookie
+* [Fix] Restored Bar:Opacity option [a-few-more-minor-things-in-2-0](https://wordpress.org/support/topic/a-few-more-minor-things-in-2-0/)
+* [Update] Font Awesome 5.0.13
 
 = 2.0.0 =
-* [Upgraded] Font Awesome 5.0.12 - [can-add-support-fontawesome-v5-0-8](https://wordpress.org/support/topic/can-add-support-fontawesome-v5-0-8/)
-* [Upgraded] New data scheme for options in the database
-* [Added] UI for managing contacts and their parameters (add, delete, modify) - [a-couple-of-more-feature-suggestions](https://wordpress.org/support/topic/a-couple-of-more-feature-suggestions/)
-* [Added] Option for setting label on the toggle Toggle:Label - [a-couple-of-more-feature-suggestions](https://wordpress.org/support/topic/a-couple-of-more-feature-suggestions/)
-* [Added] Option for adding space above/below the bar Bar:Space_Height - [contact-bar-overlaying-footer-credits-on-site](https://wordpress.org/support/topic/contact-bar-overlaying-footer-credits-on-site/), [position](https://wordpress.org/support/topic/position-20/), [hidding-menu](https://wordpress.org/support/topic/hidding-menu/)
-* [Added] Storing toggle state in a cookie - [toggle-state](https://wordpress.org/support/topic/toggle-state/), [toggle-issue](https://wordpress.org/support/topic/toggle-issue/)
-* [Added] WhatsApp - [a-couple-of-feature-ideas](https://wordpress.org/support/topic/a-couple-of-feature-ideas/), [whatsapp-chat](https://wordpress.org/support/topic/whatsapp-chat/)
-* [Added] WooCommerce Cart with Item Counter - [a-couple-of-feature-ideas](https://wordpress.org/support/topic/a-couple-of-feature-ideas/)
-* [Removed] `mcb_admin_update_contacts` and `mcb_admin_update_settings` filters
-* [Renamed] `mcb_front_render_html` to `mcb_public_render_html`
+* [Upgrade] Reimplement plugin with new options in the database
+* [Upgrade] Font Awesome 5.0.12 [can-add-support-fontawesome-v5-0-8](https://wordpress.org/support/topic/can-add-support-fontawesome-v5-0-8/)
+* [Rename] `mcb_front_render_html` to `mcb_public_render_html`
+* [Deprecate] `mcb_admin_update_contacts` and `mcb_admin_update_settings` filters
+* [Add] UI for managing contacts and details (add, delete, modify) [a-couple-of-more-feature-suggestions](https://wordpress.org/support/topic/a-couple-of-more-feature-suggestions/)
+* [Add] Option for setting label on the toggle [a-couple-of-more-feature-suggestions](https://wordpress.org/support/topic/a-couple-of-more-feature-suggestions/)
+* [Add] Option for adding space above/below the bar [contact-bar-overlaying-footer-credits-on-site](https://wordpress.org/support/topic/contact-bar-overlaying-footer-credits-on-site/), [position](https://wordpress.org/support/topic/position-20/), [hidding-menu](https://wordpress.org/support/topic/hidding-menu/)
+* [Add] Storing toggle state in a cookie [toggle-state](https://wordpress.org/support/topic/toggle-state/), [toggle-issue](https://wordpress.org/support/topic/toggle-issue/)
+* [Add] WhatsApp [a-couple-of-feature-ideas](https://wordpress.org/support/topic/a-couple-of-feature-ideas/), [whatsapp-chat](https://wordpress.org/support/topic/whatsapp-chat/)
+* [Add] WooCommerce Cart with Item Counter action [a-couple-of-feature-ideas](https://wordpress.org/support/topic/a-couple-of-feature-ideas/)
 
 = 1.4.1 =
-* [Fixed] Bar:Width and Bar:Alignment issues
+* [Fix] Bar width and bar alignment issues
 
 = 1.4.0 =
-* [Added] Option for setting Bar:Width - [bar-width-2](https://wordpress.org/support/topic/bar-width/)
-* [Added] Icon for Instagram - [no-instagram-icon](https://wordpress.org/support/topic/no-instagram-icon/)
-* [Fixed] Plugin upgrade on network
+* [Add] Option for setting bar width [bar-width-2](https://wordpress.org/support/topic/bar-width/)
+* [Add] Icon for Instagram [no-instagram-icon](https://wordpress.org/support/topic/no-instagram-icon/)
+* [Fix] Plugin upgrade on network
 
 = 1.3.1 =
-* [Tested] Tested up to WordPress 4.9
+* [Test] Tested up to WordPress 4.9
 
 = 1.3.0 =
-* [Added] Icon for texting - [text-with-pre-filled-option](https://wordpress.org/support/topic/text-with-pre-filled-option/)
+* [Add] Icon for texting (sms) [text-with-pre-filled-option](https://wordpress.org/support/topic/text-with-pre-filled-option/)
 
 = 1.2.3 =
-* [Fixed] array_filter() issue
+* [Fix] array_filter() issue
 
 = 1.2.2 =
-* [Fixed] array_filter() issue
+* [Fix] array_filter() issue
 
 = 1.2.1 =
-* [Fixed] Empty arrays issues
+* [Fix] Empty arrays issues
 
 = 1.2.0 =
-* [Updated] Font Awesome 4.7.0
-* [Added] UI for sorting contacts
-* [Added] Option for setting subject, body, cc, bcc of email - [add-subject-and-body-to-email](https://wordpress.org/support/topic/add-subject-and-body-to-email/)
-* [Added] Refreshed option page UI using meta boxes
-* [Fixed] Prepared plugin for localization
-* [Fixed] Sanitized phone number and add a plus sign (+) prefix
+* [Add] UI for sorting contacts
+* [Add] Option for setting subject, body, cc, bcc of email [add-subject-and-body-to-email](https://wordpress.org/support/topic/add-subject-and-body-to-email/)
+* [Add] Refreshed option page UI using meta boxes
+* [Fix] Prepared plugin for localization
+* [Fix] Sanitized phone number and add a plus sign (+) prefix
+* [Update] Font Awesome 4.7.0
 
 = 1.1.2 =
-* [Updated] Font Awesome 4.6.3
-* [Fixed] Left aligned icons in the CSS - [does-your-plugin-support-the-hemingway-theme](https://wordpress.org/support/topic/does-your-plugin-support-the-hemingway-theme/)
+* [Fix] Left aligned icons in the CSS [does-your-plugin-support-the-hemingway-theme](https://wordpress.org/support/topic/does-your-plugin-support-the-hemingway-theme/)
+* [Update] Font Awesome 4.6.3
 
 = 1.1.1 =
-* [Updated] Font Awesome 4.6.1
-* [Fixed] Admin styles
-* [Fixed] Public styles
+* [Fix] Admin styles
+* [Fix] Public styles
+* [Update] Font Awesome 4.6.1
 
 = 1.1.0 =
-* [Added] Option for Bar:Opening links in a new tab - [no-instagram-icon](https://wordpress.org/support/topic/no-instagram-icon/)
+* [Add] Option for Bar:Opening links in a new tab [no-instagram-icon](https://wordpress.org/support/topic/no-instagram-icon/)
 
 = 1.0.1 =
-* [Fixed] Improved setting and contact validation (sanitization)
-* [Fixed] Set the default value of the fixed bar position to true
-* [Fixed] Removed obsolated workarounds
+* [Fix] Improved setting and contact validation (sanitization)
+* [Fix] Set the default value of the fixed bar position to true
+* [Fix] Removed obsolated workarounds
 
 = 1.0.0 =
-* [Upgraded] Official release
+* [Upgrade] Official release
 
-= 0.0.2 =
-* [Fixed] Default option issue during network activation
+= 0.1.1 =
+* [Fix] Default option issue during network activation
 
-= 0.0.1 =
-* [Started] Initial release
+= 0.1.0 =
+* [Add] Initial release
 
 
 
 == Upgrade Notice ==
 
 = 2.0.0 =
-* Data scheme and Font Awesome upgrade which needs manual updating. Please run the updater!
+* Structure of the plugin's option has been changed, supported Font Awesome version is 5.
 
 = 1.0.0 =
-* Official release
-
-= 0.0.1 =
-* Initial release
+* Official release.

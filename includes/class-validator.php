@@ -5,6 +5,10 @@ defined( 'ABSPATH' ) or exit;
 
 final class Mobile_Contact_Bar_Validator
 {
+    const SCHEMES = array( 'viber', 'tel', 'sms', 'skype', 'mailto', 'https', 'http' );
+
+
+
     /**
      * Sanitizes the contact URI.
      *
@@ -30,7 +34,7 @@ final class Mobile_Contact_Bar_Validator
                 case 'tel':
                 case 'sms':
                     $path    = self::sanitize_phone_number( $parsed_uri['path'] );
-                    $new_uri = ( '' != $path ) ? $parsed_uri['scheme'] . ':+' . $path : '';
+                    $new_uri = ( '' != $path ) ? $parsed_uri['scheme'] . ':' . $path : '';
                     break;
 
                 case 'skype':
@@ -46,18 +50,11 @@ final class Mobile_Contact_Bar_Validator
 
                 case 'http':
                 case 'https':
-                    if( isset( $parsed_uri['path'] ))
-                    {
-                        $new_uri = untrailingslashit( esc_url_raw( $parsed_uri['scheme'] . '://' . $parsed_uri['host'] . $parsed_uri['path'] ));
-                    }
-                    else
-                    {
-                        $new_uri = untrailingslashit( esc_url_raw( $parsed_uri['scheme'] . '://' . $parsed_uri['host'] ));
-                    }
+                    $new_uri = esc_url_raw( rawurldecode( $uri ));
                     break;
 
                 default:
-                    $new_uri = '';
+                    $new_uri = esc_url_raw( rawurldecode( $uri ), self::SCHEMES );
                     break;
             }
         }
@@ -67,14 +64,14 @@ final class Mobile_Contact_Bar_Validator
 
 
     /**
-     * Escapes the contact URI.
+     * Validates the contact URI.
      *
      * @since 2.0.0
      *
      * @param  string $uri Contact URI (URL, phone number, email address, etc. )
      * @return string      Escaped URI
      */
-    public static function escape_contact_uri( $uri )
+    public static function validate_contact_uri( $uri )
     {
         if( '' == $uri || '#' == $uri )
         {
@@ -91,7 +88,7 @@ final class Mobile_Contact_Bar_Validator
                 case 'tel':
                 case 'sms':
                     $path    = self::sanitize_phone_number( $parsed_uri['path'] );
-                    $new_uri = ( '' != $path ) ? $parsed_uri['scheme'] . ':+' . $path : '';
+                    $new_uri = ( '' != $path ) ? $parsed_uri['scheme'] . ':' . $path : '';
                     break;
 
                 case 'skype':
@@ -107,18 +104,11 @@ final class Mobile_Contact_Bar_Validator
 
                 case 'http':
                 case 'https':
-                    if( isset( $parsed_uri['path'] ))
-                    {
-                        $new_uri = untrailingslashit( esc_url( $parsed_uri['scheme'] . '://' . $parsed_uri['host'] . $parsed_uri['path'] ));
-                    }
-                    else
-                    {
-                        $new_uri = untrailingslashit( esc_url( $parsed_uri['scheme'] . '://' . $parsed_uri['host'] ));
-                    }
+                    $new_uri = rawurldecode( $uri );
                     break;
 
                 default:
-                    $new_uri = '';
+                    $new_uri = rawurldecode( $uri );
                     break;
             }
         }
@@ -176,9 +166,14 @@ final class Mobile_Contact_Bar_Validator
      */
     public static function sanitize_skype_name( $skype_name )
     {
-        if( preg_match('/^[a-z][a-z0-9\.,\-_]{5,31}$/i', $skype_name ))
+        $sanitized_skype = preg_replace( '/\s+/', '', $skype_name );
+        if ( preg_match( '/^skype:[a-z][a-z0-9\.,\-_]{5,31}\?(call|chat)$/', $sanitized_skype ))
         {
-            return $skype_name;
+            return $sanitized_skype;
+        }
+        if ( preg_match( '/^skype:\+[0-9]+\?(call|chat)$/', $sanitized_skype ))
+        {
+            return $sanitized_skype;
         }
 
         return '';
@@ -191,16 +186,16 @@ final class Mobile_Contact_Bar_Validator
      *
      * @since 1.2.0
      *
-     * @param  string $phone Phone number
-     * @return string        Filtered phone number with a plus sign (+) prefix
+     * @param  string $phone_number Phone number
+     * @return string               Filtered phone number with a plus sign (+) prefix
      */
-    public static function sanitize_phone_number( $phone )
+    public static function sanitize_phone_number( $phone_number )
     {
-        $phone = preg_replace( '/[^0-9\-]/', '', $phone );
-
-        if( $phone )
+        $sanitized_phone_number = preg_replace( '/\s+/', '', $phone_number );
+        $sanitized_phone_number = preg_replace( '/[\.\-\(\)]/', '', $sanitized_phone_number );
+        if ( preg_match( '/^\+?[0-9]+$/', $sanitized_phone_number ))
         {
-            return $phone;
+            return $sanitized_phone_number;
         }
 
         return '';
@@ -218,25 +213,27 @@ final class Mobile_Contact_Bar_Validator
      */
     public static function sanitize_email_addresses( $email_addresses )
     {
+        $sanitized_email_adresses = '';
+
         $email_addresses = preg_replace( '/\s+/', '', $email_addresses );
 
-        if( $email_addresses )
+        if ( ! empty( $email_addresses ))
         {
-            $sanitized_list = array();
-            $list = explode( ',', $email_addresses );
+            $sanitized_emails = array();
+            $email_addresses = explode( ',', $email_addresses );
 
-            foreach( $list as $item )
+            foreach ( $email_addresses as $email_address )
             {
-                $value = sanitize_email( $item );
-                if( is_email( $value ))
+                $sanitized_email = sanitize_email( $email_address );
+                if ( is_email( $sanitized_email ))
                 {
-                    $sanitized_list[] = $value;
+                    $sanitized_emails[] = $sanitized_email;
                 }
             }
-            $email_addresses = join( ',', $sanitized_list );
-            return $email_addresses;
+
+            $sanitized_email_adresses = join( ',', $sanitized_emails );
         }
 
-        return '';
+        return $sanitized_email_adresses;
     }
 }

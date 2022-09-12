@@ -543,7 +543,7 @@ final class Mobile_Contact_Bar_Updater
 
 
     /**
-     * Closes meta boxes except Contact List.
+     * Closes meta boxes except Button List.
      *
      * @since 2.0.0
      *

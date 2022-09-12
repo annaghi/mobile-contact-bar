@@ -1,9 +1,7 @@
 /*!
- * Mobile Contact Bar 2.0.1 by Anna Bansaghi - http://mobilecontactbar.com
+ * Mobile Contact Bar 2.1.0 by Anna Bansaghi - http://mobilecontactbar.com
  * License GPL-3.0 - https://www.gnu.org/licenses/gpl-3.0.en.html
  */
-
-
 
 /* Help Tabs */
 
@@ -25,7 +23,6 @@
 .contextual-help-sidebar a {
     text-decoration: none;
 }
-
 
 /* MCB Real Time Model */
 
@@ -64,16 +61,12 @@
     padding-top: 10px;
 }
 
-
-
-
 /* Postbox Contact list */
 
 #mcb-section-contacts.postbox .inside {
     margin-top: 0;
     padding: 0;
 }
-
 
 /* Table Contact list */
 
@@ -95,15 +88,12 @@
     line-height: inherit;
 }
 
-
-
 #mcb-table-contacts th {
     width: 30%;
 }
 
-
 #mcb-table-contacts {
-     background-color: #f1f1f1;
+    background-color: #f1f1f1;
 }
 #mcb-table-contacts tr {
     background-color: #fff;
@@ -123,7 +113,7 @@
 }
 #mcb-table-contacts .mcb-overlay {
     background-color: #fcfcfc;
-    opacity: .5;
+    opacity: 0.5;
     z-index: 99;
 }
 #mcb-table-contacts .mcb-parameter {
@@ -141,9 +131,6 @@
     visibility: hidden;
 }
 
-
-
-
 #mcb-table-contacts ul {
     display: inline-block;
     width: 100%;
@@ -154,11 +141,10 @@
 
 #mcb-table-contacts .mcb-th li,
 #mcb-table-contacts .mcb-td > li {
-    height: 26px;
+    min-height: 26px;
     padding: 14px 0;
     vertical-align: bottom;
 }
-
 
 /* Action Icons and Buttons */
 
@@ -211,8 +197,6 @@
     width: 100%;
 }
 
-
-
 /* Contact TH */
 
 #mcb-table-contacts th {
@@ -237,14 +221,12 @@
     width: 100%;
 }
 
-
 /* Contact TD */
 
 #mcb-table-contacts .mcb-contact-uri,
 #mcb-table-contacts .mcb-parameter-value {
     width: calc(100% - 10em - 60px);
 }
-
 
 /* Parameter TH */
 
@@ -256,7 +238,6 @@
     text-align: right;
 }
 
-
 /* Table header */
 
 #mcb-table-contacts thead td {
@@ -265,7 +246,6 @@
 #mcb-table-contacts thead .wp-ui-text-highlight {
     background-color: #f1f1f1;
 }
-
 
 /* Table footer */
 
@@ -276,7 +256,6 @@
     margin: 0 6px 0 6px;
     vertical-align: top;
 }
-
 
 /* Sortable table */
 
@@ -290,8 +269,6 @@
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     display: table;
 }
-
-
 
 @media only screen and (max-width: 1120px) {
     #poststuff {
@@ -325,7 +302,6 @@
         display: none;
     }
 }
-
 
 @media only screen and (max-width: 782px) {
     #mcb-table-contacts .mcb-odd {
@@ -397,8 +373,6 @@
     }
 }
 
-
-
 /* Icon Picker */
 
 #mcb-icon-picker-container {
@@ -463,9 +437,6 @@
     width: calc(100% - 48px);
 }
 
-
-
-
 /* Color Picker */
 
 .wp-picker-container,
@@ -479,12 +450,10 @@
 .wp-picker-container .wp-color-result-text {
     min-width: 6.6em;
 }
-.wp-picker-container input[type="text"].cs-wp-color-picker {
+.wp-picker-container input[type='text'].cs-wp-color-picker {
     margin-left: 13px;
     margin-right: 10px;
 }
-
-
 
 /* Settings */
 
@@ -507,9 +476,6 @@
 .mcb-settings .mcb-child {
     background-color: #f8f8f8;
 }
-
-
-
 
 /* Radio Images */
 .mcb-settings .form-table td fieldset label.mcb-radio-image {
@@ -538,8 +504,6 @@
     border: 1px solid #1e8cbe;
 }
 
-
-
 .mcb-settings .mcb-radio-label {
     margin: 0 !important;
     padding-right: 2rem;
@@ -548,7 +512,7 @@
     vertical-align: top;
 }
 
-@media screen and ( max-width: 782px ) {
+@media screen and (max-width: 782px) {
     .mcb-settings td {
         padding-left: 12px;
     }

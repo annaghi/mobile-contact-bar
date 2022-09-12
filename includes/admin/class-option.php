@@ -106,11 +106,11 @@ final class Mobile_Contact_Bar_Option {
 			}
 		}
 
-		// Contact List Section
+		// Button List Section
 
 		add_settings_section(
 			'mcb-section-contacts',
-			__( 'Contact List', 'mobile-contact-bar' ),
+			__( 'Button List', 'mobile-contact-bar' ),
 			false,
 			MOBILE_CONTACT_BAR__NAME
 		);
@@ -445,7 +445,7 @@ final class Mobile_Contact_Bar_Option {
 	 * @return string       HTML td
 	 */
 	private static function output_contact_td( $args ) {
-		$sanitized_uri = Mobile_Contact_Bar_Validator::escape_contact_uri( $args['contact']['uri'] );
+		$sanitized_uri = Mobile_Contact_Bar_Validator::sanitize_contact_uri( $args['contact']['uri'] );
 
 		$out = '';
 
@@ -1454,5 +1454,4 @@ final class Mobile_Contact_Bar_Option {
 		}
 		return false;
 	}
-
 }

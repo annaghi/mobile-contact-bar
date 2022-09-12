@@ -25,7 +25,7 @@ final class Mobile_Contact_Bar_Contact_Custom
     {
         $buttons[5] = array(
             'type'  => self::$type,
-            'title' => __( '+ New Contact', 'mobile-contact-bar' ),
+            'title' => __( '+ New Button', 'mobile-contact-bar' ),
         );
         return $buttons;
     }
