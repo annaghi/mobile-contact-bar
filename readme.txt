@@ -99,9 +99,9 @@ We use JavaScript on the front-end in two cases:
 = Cookies =
 You have full control over the single cookie which is called *mobile_contact_bar_toggle*.
 
-= Clearing the cache =
-If your site is chached via a caching plugin such as WP Fastest Cache or Cache Enabler, then it is important to clear those caches after the Contact Bar has been enabled.
-Also, if you disable the Contact Bar then the caches need to be cleared again.
+= Cleaning the cache =
+If your site is chached via a caching plugin such as WP Fastest Cache or Cache Enabler, then it is important to clean those caches after the Contact Bar has been enabled.
+Also, if you disable the Contact Bar then the caches need to be cleaned again.
 
 
 
