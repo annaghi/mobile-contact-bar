@@ -54,44 +54,44 @@ define( 'MOBILE_CONTACT_BAR__VERSION' , $plugin_data['Version'] );
 // Admin functionality
 if( is_admin() )
 {
-    $dir = plugin_dir_path( __FILE__ );
+	$dir = plugin_dir_path( __FILE__ );
 
 
-    // update
-    if( get_option( 'mcb_option' ))
-    {
-        update_option( MOBILE_CONTACT_BAR__NAME . '_update', 1 );
-    }
-    if( get_option( MOBILE_CONTACT_BAR__NAME . '_update' ))
-    {
-        include_once $dir . 'includes/admin/class-updater.php';
-        add_action( 'plugins_loaded', array( 'Mobile_Contact_Bar_Updater', 'plugins_loaded' ));
-    }
+	// update
+	if( get_option( 'mcb_option' ))
+	{
+		update_option( MOBILE_CONTACT_BAR__NAME . '_update', 1 );
+	}
+	if( get_option( MOBILE_CONTACT_BAR__NAME . '_update' ))
+	{
+		include_once $dir . 'includes/admin/class-updater.php';
+		add_action( 'plugins_loaded', array( 'Mobile_Contact_Bar_Updater', 'plugins_loaded' ));
+	}
 
 
-    // activate
-    include_once $dir . 'includes/admin/class-page.php';
-    include_once $dir . 'includes/admin/class-option.php';
-    include_once $dir . 'includes/admin/class-settings.php';
+	// activate
+	include_once $dir . 'includes/admin/class-page.php';
+	include_once $dir . 'includes/admin/class-option.php';
+	include_once $dir . 'includes/admin/class-settings.php';
 
-    register_activation_hook( __FILE__, array( 'Mobile_Contact_Bar_Page', 'on_activation' ));
+	register_activation_hook( __FILE__, array( 'Mobile_Contact_Bar_Page', 'on_activation' ));
 
-    add_action( 'plugins_loaded', array( 'Mobile_Contact_Bar_Page'   , 'plugins_loaded' ));
-    add_action( 'plugins_loaded', array( 'Mobile_Contact_Bar_Option' , 'plugins_loaded' ));
+	add_action( 'plugins_loaded', array( 'Mobile_Contact_Bar_Page'   , 'plugins_loaded' ));
+	add_action( 'plugins_loaded', array( 'Mobile_Contact_Bar_Option' , 'plugins_loaded' ));
 }
 
 // Public functionality
 else
 {
-    if( get_option( 'mcb_option' ))
-    {
-        include_once plugin_dir_path( __FILE__ ) . 'includes/public/class-renderer-v1.php';
-    }
-    else
-    {
-        include_once plugin_dir_path( __FILE__ ) . 'includes/public/class-renderer.php';
-    }
-    add_action( 'plugins_loaded', array( 'Mobile_Contact_Bar_Renderer', 'plugins_loaded' ));
+	if( get_option( 'mcb_option' ))
+	{
+		include_once plugin_dir_path( __FILE__ ) . 'includes/public/class-renderer-v1.php';
+	}
+	else
+	{
+		include_once plugin_dir_path( __FILE__ ) . 'includes/public/class-renderer.php';
+	}
+	add_action( 'plugins_loaded', array( 'Mobile_Contact_Bar_Renderer', 'plugins_loaded' ));
 }
 
 
@@ -100,17 +100,17 @@ else
 // Validation and Contacts
 if( class_exists( 'Mobile_Contact_Bar_Page' ) || class_exists( 'Mobile_Contact_Bar_Renderer' ))
 {
-    $dir = plugin_dir_path( __FILE__ );
+	$dir = plugin_dir_path( __FILE__ );
 
-    include_once $dir . 'includes/class-validator.php';
+	include_once $dir . 'includes/class-validator.php';
 
-    foreach( glob( $dir . 'includes/contacts/class-*.php' ) as $path )
-    {
-        include_once $path;
+	foreach( glob( $dir . 'includes/contacts/class-*.php' ) as $path )
+	{
+		include_once $path;
 
-        $name = substr( basename( $path, '.php' ), 6 );
-        $class_name = 'Mobile_Contact_Bar_Contact_' . $name;
+		$name = substr( basename( $path, '.php' ), 6 );
+		$class_name = 'Mobile_Contact_Bar_Contact_' . $name;
 
-        add_action( 'plugins_loaded', array( $class_name, 'plugins_loaded' ));
-    }
+		add_action( 'plugins_loaded', array( $class_name, 'plugins_loaded' ));
+	}
 }

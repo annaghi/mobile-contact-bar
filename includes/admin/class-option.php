@@ -48,7 +48,7 @@ final class Mobile_Contact_Bar_Option {
 	 * @since 0.1.0
 	 */
 	public static function init() {
-		 self::$option  = get_option( MOBILE_CONTACT_BAR__NAME );
+		self::$option  = get_option( MOBILE_CONTACT_BAR__NAME );
 		self::$settings = Mobile_Contact_Bar_Settings::settings();
 	}
 
@@ -90,7 +90,7 @@ final class Mobile_Contact_Bar_Option {
 				);
 
 				if ( isset( $setting['parent'] ) ) {
-					 $args['class'] = 'hidden mcb-child mcb-parent-' . $section_id . '-' . $setting['parent'];
+					$args['class'] = 'hidden mcb-child mcb-parent-' . $section_id . '-' . $setting['parent'];
 				} elseif ( isset( $setting['trigger'] ) ) {
 					$args['class'] = 'mcb-parent mcb-parent-' . $section_id . '-' . $setting_id . ' mcb-trigger-' . $setting['trigger'];
 				}
@@ -614,7 +614,7 @@ final class Mobile_Contact_Bar_Option {
 	 * @return array        Sanitized option.
 	 */
 	public static function callback_sanitize_option( $input ) {
-		 // SETTINGS
+		// SETTINGS
 
 		$settings           = $input['settings'];
 		$sanitized_settings = array();
@@ -1081,7 +1081,7 @@ final class Mobile_Contact_Bar_Option {
 			if ( $bar['placeholder_height'] > 0 ) {
 				$styles .= ( $bar['space_height'] > 0 ) ? 'bottom:' . ( $bar['space_height'] - $bar['placeholder_height'] ) . 'px;' : 'bottom:-' . $bar['placeholder_height'] . 'px;';
 			} else {
-				 $styles .= ( $bar['space_height'] > 0 ) ? 'bottom:' . $bar['space_height'] . 'px;' : 'bottom:0;';
+				$styles .= ( $bar['space_height'] > 0 ) ? 'bottom:' . $bar['space_height'] . 'px;' : 'bottom:0;';
 			}
 			$styles .= '}';
 		}
@@ -1219,19 +1219,19 @@ final class Mobile_Contact_Bar_Option {
 			$data = null;
 			$out  = '';
 
-			$out     .= '<tr class="mcb-contact">';
-			$out     .= '<th scope="row">';
-				$out .= self::output_contact_th( '', $contact );
-			$out     .= '</th>';
-			$out     .= '<td>';
-				$out .= self::output_contact_td(
-					array(
-						'contact_id' => '',
-						'contact'    => $contact,
-					)
-				);
-				$out .= '</td>';
-			$out     .= '</tr>';
+			$out .= '<tr class="mcb-contact">';
+			$out .= '<th scope="row">';
+			$out .= self::output_contact_th( '', $contact );
+			$out .= '</th>';
+			$out .= '<td>';
+			$out .= self::output_contact_td(
+				array(
+					'contact_id' => '',
+					'contact'    => $contact,
+				)
+			);
+			$out .= '</td>';
+			$out .= '</tr>';
 
 			$data['contact'] = $out;
 
@@ -1241,21 +1241,21 @@ final class Mobile_Contact_Bar_Option {
 				foreach ( $contact['parameters'] as $parameter_id => $parameter ) {
 					$out = '';
 
-					$out     .= '<tr class="mcb-parameter hidden">';
-						$out .= '<th scope="row">';
-						$out .= self::output_parameter_th( $parameter_id, $parameter['key'], '', $contact['type'] );
-						$out .= '</th>';
-						$out .= '<td>';
-						$out .= self::output_parameter_td(
-							array(
-								'parameter_id' => $parameter_id,
-								'parameter'    => $parameter,
-								'contact_id'   => '',
-								'contact_type' => $contact['type'],
-							)
-						);
-						$out .= '</td>';
-					$out     .= '</tr>';
+					$out .= '<tr class="mcb-parameter hidden">';
+					$out .= '<th scope="row">';
+					$out .= self::output_parameter_th( $parameter_id, $parameter['key'], '', $contact['type'] );
+					$out .= '</th>';
+					$out .= '<td>';
+					$out .= self::output_parameter_td(
+						array(
+							'parameter_id' => $parameter_id,
+							'parameter'    => $parameter,
+							'contact_id'   => '',
+							'contact_type' => $contact['type'],
+						)
+					);
+					$out .= '</td>';
+					$out .= '</tr>';
 
 					$parameters[] = $out;
 				}
