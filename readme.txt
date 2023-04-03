@@ -3,7 +3,7 @@ Contributors: anna.bansaghi
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YXJAZ7Q5EJFUA
 Tags: social media, icon, cta button, call to action, woocommerce cart
 Requires at least: 4.6
-Tested up to: 6.0
+Tested up to: 6.2
 Requires PHP: 5.3
 Stable tag: 2.1.0
 License: GPLv2
