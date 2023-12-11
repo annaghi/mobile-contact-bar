@@ -119,7 +119,7 @@ Also, if you disable the Contact Bar then the caches need to be cleaned again.
 
 = 3.0.0 =
 
-* [Upgrade] Font Awesome 6.5.1
+* [Upgrade] Font Awesome 6.5.1 [font-awesome-6](https://wordpress.org/support/topic/font-awesome-6-2/)
 
 = 2.1.0 =
 + [Add] Add viber protocol [viber-chat](https://wordpress.org/support/topic/problem-whit-link/), [how-to-add-viber-button](https://wordpress.org/support/topic/how-to-add-viber-button/)

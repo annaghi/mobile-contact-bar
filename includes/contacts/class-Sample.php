@@ -132,7 +132,7 @@ final class Mobile_Contact_Bar_Contact_Sample
 			array(
 				'checked'     => 0,
 				'type'        => self::$type,
-				'icon'        => 'fab fa-twitter',
+				'icon'        => 'fab fa-x-twitter',
 				'title'       => 'Twitter',
 				'placeholder' => 'https://twitter.com/username',
 				'uri'         => '',
