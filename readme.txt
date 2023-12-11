@@ -5,7 +5,7 @@ Tags: social media, icon, cta button, call to action, woocommerce cart
 Requires at least: 4.6
 Tested up to: 6.4
 Requires PHP: 5.3
-Stable tag: 2.1.0
+Stable tag: 3.0.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.en.html
 
@@ -25,7 +25,7 @@ The settings page is available under the *Settings &rarr; Mobile Contact Bar* me
 
 * Icons for social media, call-to-actions, or any links to web pages
 * Simple and intuitive styling with the aid of the Real-time Model
-* Built-in icon picker with [Font Awesome 5](https://fontawesome.com/) integration
+* Built-in icon picker with [Font Awesome 6](https://fontawesome.com/) integration
 * Customizable URLs using query string parameters
 * No data collection from your website's visitors
 * Super easy to use, no coding required!
@@ -53,6 +53,7 @@ The settings page is available under the *Settings &rarr; Mobile Contact Bar* me
 
 = Tested with =
 
+* Twenty Twenty-Three
 * Twenty Twenty-Two
 * Twenty Twenty-One
 * Twenty Twenty
@@ -115,6 +116,10 @@ Also, if you disable the Contact Bar then the caches need to be cleaned again.
 
 
 == Changelog ==
+
+= 3.0.0 =
+
+* [Upgrade] Font Awesome 6.5.1
 
 = 2.1.0 =
 + [Add] Add viber protocol [viber-chat](https://wordpress.org/support/topic/problem-whit-link/), [how-to-add-viber-button](https://wordpress.org/support/topic/how-to-add-viber-button/)

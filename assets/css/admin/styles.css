@@ -209,9 +209,6 @@
     height: 1.33333em;
     width: 3em;
 }
-#mcb-table-contacts .mcb-contact-icon i {
-    vertical-align: bottom;
-}
 #mcb-table-contacts .mcb-contact-title,
 #mcb-table-contacts .mcb-parameter-key {
     width: calc(100% - 7em);
