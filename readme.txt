@@ -118,11 +118,10 @@ Also, if you disable the Contact Bar then the caches need to be cleaned again.
 == Changelog ==
 
 = 3.0.0 =
-
 * [Upgrade] Font Awesome 6.5.1 [font-awesome-6](https://wordpress.org/support/topic/font-awesome-6-2/)
 
 = 2.1.0 =
-+ [Add] Add viber protocol [viber-chat](https://wordpress.org/support/topic/problem-whit-link/), [how-to-add-viber-button](https://wordpress.org/support/topic/how-to-add-viber-button/)
+* [Add] Add viber protocol [viber-chat](https://wordpress.org/support/topic/problem-whit-link/), [how-to-add-viber-button](https://wordpress.org/support/topic/how-to-add-viber-button/)
 * [Fix] Let the + sign be optional in tel and sms protocols [telephone-remove](https://wordpress.org/support/topic/telephone-remove/)
 * [Fix] Decode / encode query string [e-mail-body](https://wordpress.org/support/topic/e-mail-body/)
 * [Update] Font Awesome 5.15.4
@@ -230,6 +229,9 @@ Also, if you disable the Contact Bar then the caches need to be cleaned again.
 
 
 == Upgrade Notice ==
+
+= 3.0.0 =
+* Supported Font Awesome version is 6.
 
 = 2.0.0 =
 * Structure of the plugin's option has been changed, supported Font Awesome version is 5.
