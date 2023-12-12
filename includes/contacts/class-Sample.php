@@ -108,7 +108,7 @@ final class Mobile_Contact_Bar_Contact_Sample
             array(
                 'checked'     => 0,
                 'type'        => self::$type,
-                'icon'        => 'fas fa-map-marker-alt',
+                'icon'        => 'fas fa-location-dot',
                 'title'       => 'Google Maps',
                 'placeholder' => 'https://google.com/maps/place/Dacre+St,+London+UK/',
                 'uri'         => '',

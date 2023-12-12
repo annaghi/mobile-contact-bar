@@ -5,7 +5,7 @@ Tags: social media, icon, cta button, call to action, woocommerce cart
 Requires at least: 4.6
 Tested up to: 6.4
 Requires PHP: 5.3
-Stable tag: 3.0.1
+Stable tag: 3.0.2
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.en.html
 
@@ -116,6 +116,9 @@ Also, if you disable the Contact Bar then the caches need to be cleaned again.
 
 
 == Changelog ==
+
+= 3.0.2 =
+* [Fix] Location Dot icon name changes in FA 6
 
 = 3.0.1 =
 * [Fix] Scroll Top and Shopping Cart icon name changes in FA 6 [scroll-top-broke](https://wordpress.org/support/topic/mobile-add-scroll-top-broke-after-last-update-v3-0-0/)
