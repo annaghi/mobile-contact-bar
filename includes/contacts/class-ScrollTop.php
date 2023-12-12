@@ -12,7 +12,7 @@ final class Mobile_Contact_Bar_Contact_ScrollTop
     public static function plugins_loaded()
     {
         self::$type = substr( __CLASS__, 27 );
-        self::$icon = 'fas fa-chevron-circle-up';
+        self::$icon = 'fas fa-circle-chevron-up';
 
         if( is_admin() )
         {

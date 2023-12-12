@@ -14,7 +14,7 @@ final class Mobile_Contact_Bar_Contact_WooCommerce
         if( class_exists( 'WooCommerce' ))
         {
             self::$type = substr( __CLASS__, 27 );
-            self::$icon = 'fas fa-shopping-cart';
+            self::$icon = 'fas fa-cart-shopping';
 
             if( is_admin() )
             {
