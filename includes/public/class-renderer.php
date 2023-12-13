@@ -61,7 +61,7 @@ final class Mobile_Contact_Bar_Renderer {
             'fa',
             plugins_url( 'assets/css/public.min.css', MOBILE_CONTACT_BAR__PATH ),
             array(),
-            '5.15.4 ',
+            '6.5.1',
             'all'
         );
 
