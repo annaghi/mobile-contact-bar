@@ -104,6 +104,9 @@ You have full control over the single cookie which is called *mobile_contact_bar
 If your site is chached via a caching plugin such as WP Fastest Cache or Cache Enabler, then it is important to clean those caches after the Contact Bar has been enabled.
 Also, if you disable the Contact Bar then the caches need to be cleaned again.
 
+= Custom colors for each button =
+Currently there is no built-in support in the plugin itself for adding different colors. But it is possible to add custom CSS to your site via Theme Customization, as described in this thread: [different-color-for-each-button](https://wordpress.org/support/topic/different-color-for-each-button-3/)
+
 
 
 == Screenshots ==
