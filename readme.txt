@@ -5,7 +5,7 @@ Tags: social media, icon, cta button, call to action, woocommerce cart
 Requires at least: 4.6
 Tested up to: 6.4
 Requires PHP: 5.3
-Stable tag: 3.0.2
+Stable tag: 3.0.3
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.en.html
 
@@ -119,6 +119,9 @@ Currently there is no built-in support in the plugin itself for adding different
 
 
 == Changelog ==
+
+= 3.0.3 =
+* [Fix] Update FA version number
 
 = 3.0.2 =
 * [Fix] Location Dot icon name changes in FA 6
@@ -240,7 +243,7 @@ Currently there is no built-in support in the plugin itself for adding different
 == Upgrade Notice ==
 
 = 3.0.0 =
-* Supported Font Awesome version is 6.
+* Supported Font Awesome version is 6. Please, update your icons accordingly.
 
 = 2.0.0 =
 * Structure of the plugin's option has been changed, supported Font Awesome version is 5.

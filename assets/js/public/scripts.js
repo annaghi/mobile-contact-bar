@@ -1,10 +1,10 @@
 /*!
- * Mobile Contact Bar 3.0.2 by Anna Bansaghi - http://mobilecontactbar.com
+ * Mobile Contact Bar 3.0.3 by Anna Bansaghi - http://mobilecontactbar.com
  * License GPL-3.0 - https://www.gnu.org/licenses/gpl-3.0.en.html
  */
 
 (function (document) {
-    'use strict';
+    "use strict";
 
     var MobileContactBar = {
         createCookie: function (name, value, days) {
@@ -13,22 +13,22 @@
             if (days) {
                 date = new Date();
                 date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-                expires = '; expires=' + date.toGMTString();
+                expires = "; expires=" + date.toGMTString();
             } else {
-                expires = '';
+                expires = "";
             }
-            document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value) + expires + '; path=/';
+            document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
         },
 
         readCookie: function (name) {
             var nameEQ, ca, c;
 
-            nameEQ = encodeURIComponent(name) + '=';
-            ca = document.cookie.split(';');
+            nameEQ = encodeURIComponent(name) + "=";
+            ca = document.cookie.split(";");
 
             for (var i = 0; i < ca.length; i++) {
                 c = ca[i];
-                while (c.charAt(0) === ' ') {
+                while (c.charAt(0) === " ") {
                     c = c.substring(1, c.length);
                 }
                 if (c.indexOf(nameEQ) === 0) {
@@ -39,23 +39,23 @@
         },
 
         eraseCookie: function (name) {
-            MobileContactBar.createCookie(name, '', -1);
-        }
+            MobileContactBar.createCookie(name, "", -1);
+        },
     };
 
-    var toggle = document.getElementById('mobile-contact-bar-toggle-checkbox');
+    var toggle = document.getElementById("mobile-contact-bar-toggle-checkbox");
     if (null !== toggle) {
-        toggle.addEventListener('click', function (event) {
+        toggle.addEventListener("click", function (event) {
             event.stopPropagation();
 
             if (event.target.checked) {
-                MobileContactBar.createCookie('mobile_contact_bar_toggle', 'closed');
+                MobileContactBar.createCookie("mobile_contact_bar_toggle", "closed");
             } else {
-                MobileContactBar.createCookie('mobile_contact_bar_toggle', 'open');
+                MobileContactBar.createCookie("mobile_contact_bar_toggle", "open");
             }
         });
 
-        if ('closed' == MobileContactBar.readCookie('mobile_contact_bar_toggle')) {
+        if ("closed" == MobileContactBar.readCookie("mobile_contact_bar_toggle")) {
             toggle.click();
         }
     }
