@@ -741,8 +741,8 @@ final class Mobile_Contact_Bar_Option {
             // sanitize 'title'
             $sanitized_contact['title'] = sanitize_text_field( $contact['title'] );
 
-            // copy 'placeholder'
-            $sanitized_contact['placeholder'] = $contact['placeholder'];
+            // sanitize 'placeholder'
+            $sanitized_contact['placeholder'] = sanitize_text_field( $contact['placeholder'] );
 
             // sanitize 'uri'
             $sanitized_contact['uri'] = Mobile_Contact_Bar_Validator::sanitize_contact_uri( $contact['uri'] );
