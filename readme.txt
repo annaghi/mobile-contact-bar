@@ -3,9 +3,9 @@ Contributors: anna.bansaghi
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YXJAZ7Q5EJFUA
 Tags: social media, icon, cta button, call to action, woocommerce cart
 Requires at least: 4.6
-Tested up to: 6.5
+Tested up to: 6.6
 Requires PHP: 5.3
-Stable tag: 3.0.3
+Stable tag: 3.0.4
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.en.html
 
@@ -53,6 +53,7 @@ The settings page is available under the *Settings &rarr; Mobile Contact Bar* me
 
 = Tested with =
 
+* Twenty Twenty-Four
 * Twenty Twenty-Three
 * Twenty Twenty-Two
 * Twenty Twenty-One
@@ -101,7 +102,7 @@ We use JavaScript on the front-end in two cases:
 You have full control over the single cookie which is called *mobile_contact_bar_toggle*.
 
 = Cleaning the cache =
-If your site is chached via a caching plugin such as WP Fastest Cache or Cache Enabler, then it is important to clean those caches after the Contact Bar has been enabled.
+If your site is cached via a caching plugin such as WP Fastest Cache or Cache Enabler, then it is important to clean those caches after the Contact Bar has been enabled.
 Also, if you disable the Contact Bar then the caches need to be cleaned again.
 
 = Custom colors for each button =
@@ -119,6 +120,9 @@ Currently there is no built-in support in the plugin itself for adding different
 
 
 == Changelog ==
+
+= 3.0.4 =
+* [Fix] Security fix
 
 = 3.0.3 =
 * [Fix] Update FA version number
