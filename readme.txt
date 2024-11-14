@@ -3,9 +3,9 @@ Contributors: anna.bansaghi
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YXJAZ7Q5EJFUA
 Tags: social media, icon, cta button, call to action, woocommerce cart
 Requires at least: 4.6
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 5.3
-Stable tag: 3.0.4
+Stable tag: 3.0.5
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.en.html
 
@@ -121,8 +121,11 @@ Currently there is no built-in support in the plugin itself for adding different
 
 == Changelog ==
 
+= 3.0.5 =
+* [Fix] Security fix with `esc_attr`
+
 = 3.0.4 =
-* [Fix] Security fix
+* [Fix] Security fix with `sanitize_text_field`
 
 = 3.0.3 =
 * [Fix] Update FA version number
