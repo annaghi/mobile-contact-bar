@@ -453,7 +453,7 @@ final class Mobile_Contact_Bar_Option {
         $out .= sprintf(
             '<input name="' . MOBILE_CONTACT_BAR__NAME . '[contacts][%s][placeholder]" value="%s" type="hidden">',
             esc_attr( $args['contact_id'] ),
-            $args['contact']['placeholder']
+            esc_attr( $args['contact']['placeholder'] )
         );
 
         $out .= '<ul class="mcb-td">';
@@ -474,7 +474,7 @@ final class Mobile_Contact_Bar_Option {
                 '<li class="mcb-contact-uri"><input name="' . MOBILE_CONTACT_BAR__NAME . '[contacts][%s][uri]" value="%s" placeholder="%s" type="text"></li>',
                 esc_attr( $args['contact_id'] ),
                 $sanitized_uri,
-                $args['contact']['placeholder']
+                esc_attr( $args['contact']['placeholder'] )
             );
         }
 
@@ -695,7 +695,7 @@ final class Mobile_Contact_Bar_Option {
 
         // CONTACTS
 
-        $contacts           = $input['contacts'];
+        $contacts           = isset( $input['contacts'] ) ? $input['contacts'] : array();
         $sanitized_contacts = array();
 
         $valid_contact_types = array();
@@ -759,7 +759,7 @@ final class Mobile_Contact_Bar_Option {
                     // sanitize 'placeholder'
                     $sanitized_contact['parameters'][ $parameter_id ]['placeholder'] = sanitize_text_field( $parameter['placeholder'] );
 
-                    // santitize 'value'
+                    // sanitize 'value'
                     $sanitized_contact['parameters'][ $parameter_id ]['value'] = Mobile_Contact_Bar_Validator::sanitize_parameter_value( $parameter['value'], $sanitized_contact['parameters'][ $parameter_id ]['type'] );
                 }
             }
@@ -886,7 +886,7 @@ final class Mobile_Contact_Bar_Option {
                 break;
 
             case 'justified':
-                $styles .= 'width:' . ( 100 / $contacts_count ) . '%;';
+                $styles .= ( $contacts_count > 0 ) ? 'width:' . ( 100 / $contacts_count ) . '%;' : 'width:100%;';
                 break;
         }
         $styles .= '}';
